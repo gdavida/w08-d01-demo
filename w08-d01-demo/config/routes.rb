@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
 
-  get '/' => 'static_pages#home'
+  root 'static_pages#home'
 
-  get'/shout' => 'static_pages#shout'
-  get'/fizzbuzz' => 'static_pages#fizzbuzz'
-  get'/myspace' => 'static_pages#myspace'
+  get'/shout-form' => 'shout#new', as: :new_shout
+  get'/shout' => 'shout#show', as: :shout
+
+  get'/fizzbuzz-form' => 'fizzbuzz#new', as: :new_fizzbuzz
+  get'/fizzbuzz' => 'fizzbuzz#show', as: :fizzbuzz
+
+  get'/myspace-form' => 'myspace#new', as: :new_myspace
+  get'/myspace' => 'myspace#show', as: :myspace
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

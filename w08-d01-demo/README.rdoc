@@ -45,9 +45,10 @@ Please feel free to use a different markup language if you do not plan to run
 
 6 - subl config/routes.rb
 	- set controller
-		get '/' => 'static_pages#home'
-		OR, if appl.:
-		root 'static_page#home'
+		- ROOT:
+			root 'static_page#home'
+		- OTHER PATHS:
+			get'/shout' => 'static_pages#shout', as: :shout_page
 
 7 - subl app/controller/static_pages_controller.rb
 	- define action called home:
@@ -60,5 +61,12 @@ Please feel free to use a different markup language if you do not plan to run
 	- add some html to the file and save
 	- check out your localhost:3000
 
-9 - repeat 6 - 9 for additional views
+9 - substitute erb for html
+	- links : 
+		- <%= link_to "Home", root_path  %>
+		- <%= link_to "Shout", shout_page_path  %>
+
+
+
+10 - repeat 6 - 9 for additional views
 	- define route, add controller action, create view
