@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get '/' => 'static_pages#home'
+
+  get'/shout' => 'static_pages#shout'
+  get'/fizzbuzz' => 'static_pages#fizzbuzz'
+  get'/myspace' => 'static_pages#myspace'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
